@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS signup_and_signin;
+CREATE DATABASE IF NOT EXISTS auth-demo;
 
-USE signup_and_signin;
+USE auth-demo;
 
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,

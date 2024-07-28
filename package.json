@@ -1,5 +1,5 @@
 {
-  "name": "signup-and-signin",
+  "name": "auth-demo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
