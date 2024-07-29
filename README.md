@@ -16,3 +16,14 @@
 - 前端：JavaScript, HTML, CSS
 - 密碼加密：bcrypt
 - 身分驗證：JWT token
+
+## Preview
+<a href="img-signin-preview.png" target="_blank">
+  <img src="img-signin-preview.png" alt="Sign In Page Preview" style="width: 200px; height: auto;">
+</a>
+<a href="img-signup-preview.png" target="_blank">
+  <img src="img-signup-preview.png" alt="Sign Up Page Preview" style="width: 200px; height: auto;">
+</a>
+<a href="img-welcome-preview.png" target="_blank">
+  <img src="img-welcome-preview.png" alt="Welcome Page Preview" style="width: 200px; height: auto;">
+</a>
