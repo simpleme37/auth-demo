@@ -57,4 +57,37 @@ router.post("/", async (req, res) => {
   });
 });
 
+// 用於驗證 JWT 的 niddleware
+function authenticateToken(req, res, next) {
+  const authHeader = req.headers["authorization"];
+  const token = authHeader && authHeader.split(" ")[1];
+  if (!token) return res.sendStatus(401);
+
+  jwt.verify(token, SECRET_KEY, (err, user) => {
+    if (err) return res.sendStatus(403);
+    req.user = user;
+    next();
+  });
+}
+
+// 登入之後抓用戶名稱的路由
+router.get("/user", authenticateToken, async (req, res) => {
+  const userId = req.user.id;
+  const query = "SELECT username FROM users WHERE id = ?";
+
+  db.query(query, [userId], (err, results) => {
+    if (err) {
+      console.error("Database query error", error);
+      return res.status(500).send("Server error");
+    }
+
+    if (results.length === 0) {
+      return res.status(404).send("User not found");
+    }
+
+    const user = results[0];
+    return res.status(200).json({ username: user.username });
+  });
+});
+
 export default router;
